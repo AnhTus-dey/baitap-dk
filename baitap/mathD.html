@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <th>Môn Toán</th>
+                <th>
+                    <input id="toan" type="text" width="20cm"></input>
+                </th>
+            </tr>
+            <tr>
+                <th>Môn Văn</th>
+                <th>
+                    <input id="van" type="text" width="20cm"></input>
+                </th>
+            </tr>
+            <tr>
+                <th>Môn Anh</th>
+                <th>
+                    <input id="anh" type="text" width="20cm"></input>
+                </th>
+            </tr>
+            <tr>
+                <th>Khu vực</th>
+                <th>
+                    <select id="kv">
+                        <option id="kv1" value="0.75">KV1</option>
+                        <option id="kv2"value="0.5">KV2</option>
+                        <option id="kv2nt"value="0.25">KV2-NT</option>
+                        <option id="kv3"value="0">KV3</option>
+                    </select>
+                </th>
+            </tr>
+            <tr>
+                <th> <button onclick="diem()">Tính điểm</button></th>
+                    <th><p id="tongdiem"></p></th>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function diem(){
+    let toan = +document.getElementById("toan").value;
+    let van = +document.getElementById("van").value;
+    let anh = +document.getElementById("anh").value;
+    let kv = +document.getElementById("kv").value;
+    let kv1 = +document.getElementById("kv1").value;
+    let kv2 = +document.getElementById("kv2").value;
+    let kv2nt = +document.getElementById("kv2nt").value;
+    let kv3 = +document.getElementById("kv3").value;
+    let tongdiem="";
+    switch (kv){
+        case kv1:
+            tongdiem = toan + van + anh + kv1;
+            break;
+        case kv2:
+            tongdiem = toan + van + anh + kv;
+            break;
+        case kv2nt:
+            tongdiem = toan + van + anh  + kv2nt;
+            break;
+        case kv3:
+            tongdiem = toan + van + anh ;
+            break;
+    }
+    document.getElementById("tongdiem").innerHTML= " Tổng điểm của bạn là " + tongdiem;
+}
+    </script>
+</body>
+</html>

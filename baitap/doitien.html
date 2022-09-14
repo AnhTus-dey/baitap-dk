@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td width="170px"><input type="text" id="tien"></td>
+            <td  width="150px"  >
+                <select  id="chuyenv">
+                    <option>VietNam </option>
+                </select>
+            </td>
+            <td  width="150px" > 
+                <select id="chuyenu">
+                    <option  id="usd" value="23000">USD      </option>
+                </select>
+            </td>
+            <td><button onclick="chuyentien()">Convert</button></td>
+        </tr>
+    </table>
+    <p id="giatri" ></p>
+    <script>function chuyentien(){
+        let tien = +(document.getElementById("tien").value);
+        let chuyenu =+(document.getElementById("chuyenu").value);
+        let usd =+(document.getElementById("usd").value);
+        let giatri = tien * usd 
+        document.getElementById("giatri").innerHTML=tien + " USD bằng " + giatri + " VND ";
+    }
+    </script>
+</body>
+</html>
